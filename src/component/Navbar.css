@@ -1,0 +1,152 @@
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px; /* Reduced padding to decrease navbar height */
+  background-color: #000;
+  color: #fff;
+  position: fixed; /* Ensure it's fixed to the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Make sure it spans the full width */
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+  box-sizing: border-box; /* Ensure padding doesn't affect layout */
+}
+
+.logo span {
+  font-size: 22px; /* Adjust font size to fit the smaller navbar */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px; /* Reduced gap for a more compact navbar */
+}
+
+.nav-links li {
+  font-size: 14px; /* Slightly smaller font for a more compact look */
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00; /* Gold hover effect */
+}
+
+/* Marquee inside navbar */
+.nav-marquee {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  margin: 0 20px;
+  max-width: 300px;
+}
+
+.nav-marquee p {
+  display: inline-block;
+  animation: scroll-left 15s linear infinite;
+  color: #ffcc00;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Adjusting content below the navbar */
+body {
+  padding-top: 20px; /* Adjusted for the new reduced navbar height */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  .logo span {
+    font-size: 18px; /* Slightly smaller logo text for tablet */
+  }
+
+  .nav-links {
+    gap: 10px; /* Reduced gap for smaller screens */
+  }
+
+  .nav-links li {
+    font-size: 12px; /* Slightly smaller font for tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 5px 15px; /* Reduced padding for smaller screens */
+  }
+
+  .logo span {
+    font-size: 16px; /* Further reduce the logo font size for mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links by default on mobile */
+    flex-direction: column; /* Stack items vertically when shown */
+    position: absolute;
+    top: 60px; /* Position below the navbar */
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% transparent */
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for dropdown */
+  }
+  
+
+  .nav-links.active {
+    display: flex; /* Show the navbar links when active */
+  }
+
+  .nav-links li {
+    font-size: 16px; /* Larger font for easy reading on mobile */
+    padding: 10px 0; /* Add padding for better clickability */
+    text-align: center;
+  }
+
+  .nav-links a:hover {
+    color: #ffcc00; /* Retain the hover effect */
+  }
+}
+
+/* Add a hamburger icon for mobile */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger icon on small screens */
+  }
+}
+
+/* For very small screens (below 480px) */
+@media (max-width: 480px) {
+  .logo span {
+    font-size: 14px; /* Further reduce logo size */
+  }
+
+  .nav-links li {
+    font-size: 14px; /* Smaller font size for very small screens */
+  }
+}

@@ -1,0 +1,58 @@
+/* src/Carousel.css */
+/* src/Carousel.css */
+.carousel-container {
+    margin: 10px auto;
+    max-width: 90%;
+    margin-top: 90px; /* Reduced space to bring carousel closer to the navbar */
+    padding: 0 10px; /* Added padding for spacing on small screens */
+}
+
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hide slides initially */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade and transform transition */
+}
+
+.slick-active {
+    opacity: 1 !important; /* Ensure active slide is visible */
+    transform: translateX(0); /* Reset transform on active slide */
+}
+
+/* Carousel item styling */
+.carousel-item {
+    width: 100%; /* Make each item take full width of the carousel container */
+    height: 400px; /* Adjust the height of the carousel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    padding: 3px; /* Space around each image */
+    box-sizing: border-box; /* Ensure padding doesn't affect the layout */
+    overflow: hidden; /* Hide any part of the image that overflows */
+    position: relative;
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for the carousel item */
+}
+
+/* Image styling */
+.carousel-image {
+    width: 100%; /* Make the image fill the width */
+    height: 100%; /* Ensure image fills the height */
+    object-fit: cover; /* Make sure images maintain aspect ratio */
+    border: 2px solid black; /* Add a black pencil-thin border */
+    border-radius: 10px; /* Rounded corners for a curvy look */
+    box-sizing: border-box; /* Ensure padding and border are accounted for in size */
+    transition: transform 0.8s ease-in-out; /* Smooth transform on hover */
+}
+
+/* Slide-in and fade effect for the carousel */
+.slick-slide.slick-active {
+    opacity: 1 !important;
+    transform: translateX(0); /* Slide to the original position */
+}
+
+.slick-prev.slick-disabled, .slick-next.slick-disabled {
+    opacity: 0.5; /* Make disabled arrows less visible */
+}

@@ -1,0 +1,119 @@
+/* Footer styles */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  box-sizing: border-box; /* Ensure padding doesn't affect layout */
+}
+
+.footer-logo span {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.footer-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-nav-links li {
+  font-size: 14px;
+}
+
+.footer-nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-nav-links a:hover {
+  color: #ffcc00; /* Gold hover effect */
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social-icons a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-social-icons a:hover {
+  color: #ffcc00; /* Gold hover effect */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  .footer-logo span {
+    font-size: 18px; /* Slightly smaller logo text for tablet */
+  }
+
+  .footer-nav-links {
+    gap: 10px; /* Reduced gap for smaller screens */
+  }
+
+  .footer-nav-links li {
+    font-size: 12px; /* Slightly smaller font for tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 5px 15px; /* Reduced padding for smaller screens */
+  }
+
+  .footer-logo span {
+    font-size: 16px; /* Further reduce the logo font size for mobile */
+  }
+
+  .footer-nav-links {
+    display: none; /* Hide nav links by default on mobile */
+    flex-direction: column; /* Stack items vertically when shown */
+    position: absolute;
+    top: 60px; /* Position below the footer */
+    right: 0;
+    background-color: #000;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for dropdown */
+  }
+
+  .footer-nav-links.active {
+    display: flex; /* Show the footer links when active */
+  }
+
+  .footer-nav-links li {
+    font-size: 16px;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .footer-nav-links a:hover {
+    color: #ffcc00; /* Retain the hover effect */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo span {
+    font-size: 14px; /* Further reduce logo size for very small screens */
+  }
+
+  .footer-nav-links li {
+    font-size: 14px; /* Smaller font size for very small screens */
+  }
+}
